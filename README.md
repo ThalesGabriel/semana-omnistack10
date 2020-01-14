@@ -10,5 +10,5 @@ Aula 2 - 14/01/2020
 - Inclusão das libs: Axios, Express, Nodemon e Mongoose
 
 - Desafios da aula
-- [ ] Criar Função de Update para Dev
-- [ ] Criar Função de Delete para Dev
+>> - [ ] Criar Função de Update para Dev
+>> - [ ] Criar Função de Delete para Dev
