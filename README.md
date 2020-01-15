@@ -23,5 +23,7 @@ Aula 3 - 15/01/2020
 - Inclusão da lib: Cors
 
 - Desafios da aula
+>> - [ ] Terminar Código
+>> - [ ] Melhorar Código
 >> - [ ] Criar função integrada de Update para Dev
 >> - [ ] Criar função integrada de Delete para Dev
