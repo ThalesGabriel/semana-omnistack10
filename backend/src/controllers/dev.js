@@ -1,6 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/dev');
-const parseStringAsArray = require('../utils/stringUtils');
+const StringUtils = require('../utils/stringUtils');
 
 module.exports = {
   async index(req, res) {
@@ -9,9 +9,34 @@ module.exports = {
     return res.json(devs);
   },
 
+  async deleteByGithubUserName(req, res) {
+    const { github_user } = req.body;
+
+    let response = await Dev.findOneAndDelete({ github_user })
+
+    if(!response) response = { success: false, message: "We do not have this github user" }
+    
+    return res.json(response);
+  },
+
+  async updateByGithubUserName(req, res) {
+    const { github_user } = req.body;
+
+    let response = await Dev.findOne({ github_user })
+
+    if(!response) {
+      response = { success: false, message: "We do not have this github user" }
+    }else {
+      
+    }
+    
+    return res.json(response);
+  },
 
   async store(req, res) {
-    const { github_user, tecs, latitude, longitude } = req.body;
+    const { github_user, techs, latitude, longitude } = req.body;
+
+    console.log(req.body)
 
     let dev = await Dev.findOne({ github_user })
     
@@ -21,7 +46,7 @@ module.exports = {
     
       const { name = login, bio, avatar_url } = response.data;
     
-      const tecsArray = parseStringAsArray(tecs)
+      const tecsArray = StringUtils.parseStringAsArray(techs)
       const location = {
         type: 'Point',
         coordinates: [longitude, latitude],
@@ -32,7 +57,7 @@ module.exports = {
         name,
         avatar_url,
         bio,
-        tecs: tecsArray,
+        techs: tecsArray,
         location
       })
     

@@ -6,7 +6,7 @@ const DevSchema = new mongoose.Schema({
   github_user: String,
   bio: String,
   avatar_url: String,
-  tecs: [String],
+  techs: [String],
   location: {
     type: Local,
     index: '2dsphere'
