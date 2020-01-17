@@ -1,18 +1,18 @@
 const Dev = require('../models/dev');
-const parseStringAsArray = require('../utils/stringUtils');
+const StringUtils = require('../utils/stringUtils');
 
 module.exports = {
   async index(req, res) {
     console.log(req.query);
 
-    const { latitude, longitude, tecs } = req.query;
+    const { latitude, longitude, techs } = req.query;
 
-    const tecsArray = parseStringAsArray(tecs);
+    const techsArray = StringUtils.parseStringAsArray(techs);
 
     const devs = await Dev.find({
       //Se os devs tem as tecnologias dentro de tecsArray
-      tecs: {
-        $in: tecsArray
+      techs: {
+        $in: techsArray
       },
       //Objetos perto de uma localização
       location: {
