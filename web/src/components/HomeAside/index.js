@@ -6,7 +6,7 @@ const HomeAside = ( { onSubmitDev } ) => {
 
   const [ latitude, setLatitude ] = useState('');
   const [ longitude, setLongitude ] = useState('');
-  const [ github_username, setGithub_username ] = useState('');
+  const [ github_user, setGithub_user ] = useState('');
   const [ techs, setTechs ] = useState('');
 
   useEffect(() => {
@@ -29,7 +29,10 @@ const HomeAside = ( { onSubmitDev } ) => {
 
   function handleAddDev(e) {
     e.preventDefault();
-    onSubmitDev({ github_username, latitude, longitude, techs });
+    onSubmitDev({ github_user, latitude, longitude, techs });
+
+    setGithub_user('')
+    setTechs('')
   }
 
   return (
@@ -37,8 +40,8 @@ const HomeAside = ( { onSubmitDev } ) => {
       <strong>Cadastrar</strong>
       <form onSubmit={handleAddDev}>
         <div className="input-block">
-          <label htmlFor="github_username">Usuário do Github</label>
-          <input name="github_username" id="github_username" required value={github_username} onChange={e => setGithub_username(e.target.value)}/>
+          <label htmlFor="github_user">Usuário do Github</label>
+          <input name="github_user" id="github_user" required value={github_user} onChange={e => setGithub_user(e.target.value)}/>
         </div>
         <div className="input-block">
           <label htmlFor="techs">Tecnologias</label>

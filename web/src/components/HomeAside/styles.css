@@ -4,6 +4,11 @@ aside {
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
   border-radius: 5px;
   padding: 30px 20px;
+  transition: background 0.5s;
+}
+
+aside:focus {
+  background: #8e4dff;
 }
 
 aside strong {

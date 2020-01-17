@@ -18,12 +18,10 @@ Aula 3 - 15/01/2020
 - Configuração inicial do frontend
 - Separação em modulos
 - Aplicação do CSS
-- Integração da parte de Inserção de usuário
 - Envio de dados para o banco
+- Criação de paginação
 - Inclusão da lib: Cors
 
 - Desafios da aula
->> - [ ] Terminar Código
->> - [ ] Melhorar Código
 >> - [ ] Criar função integrada de Update para Dev
->> - [ ] Criar função integrada de Delete para Dev
+>> - [X] Criar função integrada de Delete para Dev

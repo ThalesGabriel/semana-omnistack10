@@ -1,0 +1,11 @@
+.MuiPaper-root{
+  width: 100%
+}
+
+.MuiTextField-root {
+  width: 100%;
+}
+
+.MuiTextField-root + .MuiTextField-root {
+  margin-top: 10px;
+}

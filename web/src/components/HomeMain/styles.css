@@ -2,64 +2,48 @@ main {
   flex: 1;
 }
 
-main ul {
+main #devs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   list-style: none;
 }
 
-li.dev-item {
-  background: #fff;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+main #pages {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+main #pages ul {
+  margin-top: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+main #pages ul li{
+  padding: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #fff;
   border-radius: 5px;
-  padding: 20px;
+  transition: background 0.5s;
+  display: inline;
+  margin-right: 2px;
 }
 
-li.dev-item header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
+main #pages ul li a{
+  transition: color 0.5s;
+  text-decoration: none;
 }
 
-li.dev-item header img {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+main #pages ul li:hover a{
+  color: #fff;
 }
 
-li.dev-item header .user-info{ 
-  margin-left: 10px;
-}
-
-.user-info strong {
-  display: block;
-  font-size: 16px;
-  color: #333;
-}
-
-.user-info span {
-  font-size: 13px;
-  color: #999;
-  margin-top: 2px;
-}
-
-li.dev-item p {
-  color: #666;
-  font-size: 14px;
-  line-height: 20px;
-  margin: 10px 0;
-}
-
-li.dev-item a {
-  color: #8e4dff;
-  font-size: 14px;
-  text-decoration: none
-}
-
-li.dev-item a:hover {
-  color: #5a2ea6;
+main #pages ul li:hover{
+  background-color: #8e4dff;
+  cursor: pointer
 }
 
 @media (max-width: 650px) {

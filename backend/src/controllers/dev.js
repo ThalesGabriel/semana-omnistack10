@@ -40,6 +40,8 @@ module.exports = {
 
     let dev = await Dev.findOne({ github_user })
     
+    console.log(dev)
+
     if(!dev){
 
       const response = await axios.get(`https://api.github.com/users/${github_user}`);
