@@ -5,15 +5,18 @@ import Pagination from "react-js-pagination";
 import Modal from '../Modal';
 import DevItem from '../DevItem';
 import PageItems from "../PageItems";
+import api from '../../services/api';
 import './styles.css';
 
-const HomeMain = ({ devs, onDeleteDev }) => {
+const HomeMain = ({ devs, onDeleteDev, handleUpdateDev }) => {
   const [ activePage, setActivePage ] = useState(0)
   const [ dev, setDev ] = useState({})
   const [ devAux, setDevAux ] = useState([])
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    console.log('ok')
+    console.log(devs)
     setDevAux(devs.slice(0, 6))
   }, [devs])
 
@@ -22,9 +25,11 @@ const HomeMain = ({ devs, onDeleteDev }) => {
     setDev(dev)
   };
 
-  const handleClose = () => {
+  async function updateDev(d) {
     setOpen(false);
-  };
+
+    handleUpdateDev(d, dev._id)
+  }
 
   async function handleDelete(github_user) {
     await onDeleteDev(github_user)
@@ -54,7 +59,7 @@ const HomeMain = ({ devs, onDeleteDev }) => {
       </div>
 
 
-      <Modal open={open} handleClose={handleClose} dev={dev} />
+      <Modal open={open} handleClose={updateDev} dev={dev}/>
 
     </main>
   )

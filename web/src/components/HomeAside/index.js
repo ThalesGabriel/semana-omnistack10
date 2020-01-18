@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
-const HomeAside = ( { onSubmitDev } ) => {
+const HomeAside = ( { onSubmitDev, disabled } ) => {
 
   const [ latitude, setLatitude ] = useState('');
   const [ longitude, setLongitude ] = useState('');
@@ -57,7 +57,7 @@ const HomeAside = ( { onSubmitDev } ) => {
             <input type="number" name="longitude" id="longitude" required value={longitude} onChange={e => setLongitude(e.target.value)}/>
           </div>
         </div>
-        <button type="submit">Salvar</button>
+        <button type="submit" disabled={disabled}>Salvar</button>
       </form>
     </aside>
   )

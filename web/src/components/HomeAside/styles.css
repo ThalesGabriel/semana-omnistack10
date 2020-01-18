@@ -54,21 +54,31 @@ aside form .input-block input {
   border-bottom: 1px solid #EEE;
 }
 
-aside form button[type="submit"] {
+aside form button[type="submit"]{
   width: 100%;
   border: 0;
   margin-top: 30px;
-  background: #7d40e7;
   border-radius: 5px;
   padding: 15px 20px;
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.5s;
 }
 
-aside form button[type="submit"]:hover {
+aside form button[type="submit"][disabled] {
+  background: #595959;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+
+aside form button[type="submit"]:not(disabled) {
+  background: #7d40e7;
+  cursor: pointer;
+  transition: background 0.5s;
+  color: #fff;
+}
+
+aside form button[type="submit"]:not(disabled):hover {
   background: #6931CA;
 }
 

@@ -10,5 +10,6 @@ routes.get('/search', SearchController.index)
 routes.get('/devs', DevController.index)
 routes.post('/devs', DevController.store)
 routes.post('/dev/delete', DevController.deleteByGithubUserName)
+routes.put('/dev/update/:id', DevController.updateByGithubUserName)
 
 module.exports = routes;
