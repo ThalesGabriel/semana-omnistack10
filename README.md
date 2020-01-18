@@ -10,7 +10,7 @@ Aula 2 - 14/01/2020
 - Inclusão das libs: Axios, Express, Nodemon e Mongoose
 
 - Desafios da aula
->> - [ ] Criar função de Update para Dev
+>> - [X] Criar função de Update para Dev
 >> - [X] Criar função de Delete para Dev
 
 Aula 3 - 15/01/2020
@@ -23,5 +23,18 @@ Aula 3 - 15/01/2020
 - Inclusão da lib: Cors
 
 - Desafios da aula
->> - [ ] Criar função integrada de Update para Dev
+>> - [X] Criar função integrada de Update para Dev
 >> - [X] Criar função integrada de Delete para Dev
+
+
+Aula 4 - 16/01/2020
+
+- Configuração inicial do Mobile
+- Separação em modulos
+- Aplicação do CSS
+- Envio de dados para o banco
+- Listagem de usuários
+- Inclusão de libs de navegação e de geolocalização
+
+- Desafios da aula
+>> - [ ] Melhorar interface
