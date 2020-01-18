@@ -20,15 +20,10 @@ module.exports = {
   },
 
   async updateByGithubUserName(req, res) {
-    const { github_user } = req.body;
-
-    let response = await Dev.findOne({ github_user })
-
-    if(!response) {
-      response = { success: false, message: "We do not have this github user" }
-    }else {
-      
-    }
+    const { id } = req.params;
+    console.log(id)
+    console.log(req.body)
+    let response = await Dev.findByIdAndUpdate(id, req.body)
     
     return res.json(response);
   },

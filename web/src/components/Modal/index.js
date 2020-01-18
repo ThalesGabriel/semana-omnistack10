@@ -11,42 +11,65 @@ import './styles.css';
 
 export default function Modal({ open, handleClose, dev, handleUser }) {
   const [ bio, setBio ] = useState('')
+  const [ name, setName ] = useState('')
+  const [ techs, setTechs ] = useState('')
   const [ github_user, setGithub_user ] = useState('')
 
   useEffect(() => { 
 
     async function loadParams() {
       await setBio(dev.bio)
+      await setName(dev.name)
+      await setTechs(dev.techs)
       await setGithub_user(dev.github_user)
     }
     loadParams()
   }, [dev]);
 
+  function handleDev(e) {
+    e.preventDefault()
+    handleClose({ name, techs, bio, github_user })
+  }
+
   return (
     <div>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Editar - {dev.name}</DialogTitle>
+        <DialogTitle id="form-dialog-title">Editar - {dev.github_user}</DialogTitle>
         <DialogContent>
-        <TextField
+          <TextField
             id="outlined-multiline-static-user"
-            label="Usuário"
+            label="Usuário no Github"
             value={github_user || ''}
             onChange={e => setGithub_user(e.target.value)}
             variant="outlined"
           />
           <TextField
+            id="outlined-multiline-static-username"
+            label="Nome"
+            value={name || ''}
+            onChange={e => setName(e.target.value)}
+            variant="outlined"
+          />
+          <TextField
             id="outlined-multiline-static-bio"
-            label="Bio"
+            label="Biografia"
             multiline
             rows="4"
             value={bio || ''}
             onChange={e => setBio(e.target.value)}
             variant="outlined"
           />
+          <TextField
+            id="outlined-multiline-static-techs"
+            label="Tecnologias"
+            value={techs  || ''}
+            onChange={e => setTechs(e.target.value)}
+            variant="outlined"
+          />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Salvar
+          <Button onClick={handleDev} color="primary">
+            Fechar
           </Button>
         </DialogActions>
       </Dialog>

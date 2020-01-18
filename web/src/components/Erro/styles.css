@@ -1,0 +1,15 @@
+#container {
+  text-align: center; 
+  width: 100%;
+}
+
+#messageError {
+  margin-top: 40px; 
+  color: #7d40e7;
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 100%;
+  }
+}
