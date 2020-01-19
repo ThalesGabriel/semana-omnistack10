@@ -1,9 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const http = require('http')
 const routes = require('./routes');
+const { setupWebsocket } = require('./websocket');
 
 const app = express();
+const server = http.Server(app);
+
+setupWebsocket(server);
 
 mongoose.connect('mongodb+srv://Thales:V!d@140299t@cluster0-gllok.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
@@ -24,4 +29,4 @@ app.get('/', (req, res) => {
   return res.json({message: 'hello World'});
 })
 
-app.listen(3001);
+server.listen(3001);
