@@ -38,3 +38,11 @@ Aula 4 - 16/01/2020
 
 - Desafios da aula
 >> - [ ] Melhorar interface
+
+Aula 5 - 17/01/2020
+
+- Inclusão da lib websocket para funcionar como um envio de dados em tempo real
+- Inclusão da lib tanto no backend quanto no mobile
+
+- Desafios da aula
+>> - [ ] Fazer a deleção também ser em tempo real
