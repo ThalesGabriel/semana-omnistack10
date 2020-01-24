@@ -15,7 +15,7 @@
 * Captação de coordenadas geográficas do usuário para obter a localização
 * Implementação própria ***Paginação*** dos devs
 
-# Aplicação mobile
+## Aplicação mobile
 
 * Capta a localização do usuário em tempo real
 * Os devs que apareceriam inicialmente viriam todos num raio de 10km 
