@@ -1,48 +1,24 @@
 # semana-omnistack10
 
-Aula 2 - 14/01/2020
+* Poposta da semana omnistack
+  
+** Criar um sistema que utilize NodeJS no backend e 2 aplicações no frontend, uma mobile e outra desktop
+** Esse sistema teria como foco criar algo parecido com uma rede social de desenvolvedores
+** O banco de dados escolhido foi o mongodb
+** A lib de roteamento escolhida foi o express
 
-- Configuração inicial do backend
-- Construção do model de Dev
-- Construção do pseudomodel de localização
-- Criação de rotas de procura de usuário e de inclusão
-- Envio de dados para o banco
-- Inclusão das libs: Axios, Express, Nodemon e Mongoose
+* Aplicação desktop
 
-- Desafios da aula
->> - [X] Criar função de Update para Dev
->> - [X] Criar função de Delete para Dev
+** A aplicação desktop faria o cadastro e listagem dos desenvolvedores
+** Esse cadastro envolve duas complexidades
+*** Utilização da api do github para buscar a partir do username todas as informações do usuários
+*** Captação de coordenadas geográficas do usuário para obter a localização
+** Implementação própria Paginação dos devs
 
-Aula 3 - 15/01/2020
+* Aplicação mobile
 
-- Configuração inicial do frontend
-- Separação em modulos
-- Aplicação do CSS
-- Envio de dados para o banco
-- Criação de paginação
-- Inclusão da lib: Cors
-
-- Desafios da aula
->> - [X] Criar função integrada de Update para Dev
->> - [X] Criar função integrada de Delete para Dev
-
-
-Aula 4 - 16/01/2020
-
-- Configuração inicial do Mobile
-- Separação em modulos
-- Aplicação do CSS
-- Envio de dados para o banco
-- Listagem de usuários
-- Inclusão de libs de navegação e de geolocalização
-
-- Desafios da aula
->> - [ ] Melhorar interface
-
-Aula 5 - 17/01/2020
-
-- Inclusão da lib websocket para funcionar como um envio de dados em tempo real
-- Inclusão da lib tanto no backend quanto no mobile
-
-- Desafios da aula
->> - [ ] Fazer a deleção também ser em tempo real
+** Capta a localização do usuário em tempo real
+** Os devs que apareceriam inicialmente viriam todos num raio de 10km 
+** Existe um filtro a partir das tecnologias cadastradas pelo usuário na aplicação web
+** Os devs que são cadastrados, caso estejam dentro do esperado pelo app aparecem em tempo real
+** Essa condição da exibição de devs em tempo real é feita com a lib socket.io
